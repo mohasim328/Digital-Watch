@@ -7,13 +7,20 @@ setInterval(() => {
     let sec = (date.getSeconds() < 10) ? "0" + date.getSeconds() : date.getSeconds();
     let ampm = (date.getHours() > 12) ? "pm" : "am";
     let hour  = date.getHours();
-    if (date.getHours() < 10) {
-        hour = "0" +date.getHours() ;
+    if (date.getHours() <= 12) {
+
+     hour  = date.getHours() +12 ;
+        
     }
     else{
-        hour = date.getHours() -12 ; 
+        var realtime = date.getHours()
+        if(realtime>12 && realtime<22){
+            hour = "0"+(realtime-12)
+        }
+        else{
+            hour = realtime-12;
+        }
     }
-    
   
     let cuurenttime = hour + ":" + min + ":" + sec;
     clocktime.innerHTML = cuurenttime;
