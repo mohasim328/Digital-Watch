@@ -14,7 +14,7 @@ setInterval(() => {
     }
     
     else if(date.getHours()>12){
-        hour = date.getHours()-12;
+        hour = "0" + date.getHours()-12;
     }
    
     let cuurenttime = hour + ":" + min + ":" + sec;
