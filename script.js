@@ -18,8 +18,8 @@ setInterval(() => {
     else if(temp>=10 && temp<=12){
         hour = temp;
     }
-    else if(temp>=13 && temp<=21){
-        hour =  "0" + temp -12;
+    else if(temp >=13 && temp<=21){
+        hour =  "0" + temp - 12;
     }
     else {
         hour = temp - 12;
