@@ -8,7 +8,7 @@ setInterval(() => {
     let ampm = (date.getHours() > 12) ? "pm" : "am";
     let temp  = date.getHours();
     
-    let hour;
+    var hour;
     if((temp == 0 )||(temp == 12)){
         hour = 12; 
     }
@@ -19,10 +19,10 @@ setInterval(() => {
         hour = temp;
     }
     else if(temp >=13 && temp<=21){
-        hour =  "0" + temp - 12;
+        hour =  "0" + (temp - 12);
     }
     else {
-        hour = temp - 12;
+        hour = (temp - 12);
     }
     let cuurenttime = hour + ":" + min + ":" + sec;
     clocktime.innerHTML = cuurenttime;
