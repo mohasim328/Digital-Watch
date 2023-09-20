@@ -12,17 +12,17 @@ setInterval(() => {
     if((temp == 0 )||(temp == 12)){
         hour = 12; 
     }
-    else if(temp>=1||temp<=9){
+    else if(temp>=1&&temp<=9){
         hour = "0" + temp;
     }
-    else if(temp>=10||temp<=12){
+    else if(temp>=10 && temp<=12){
         hour = temp;
     }
-    else if(temp>=13||temp<=21){
+    else if(temp>=13 && temp<=21){
         hour =  "0" + temp -12;
     }
     else {
-        hour = temp;
+        hour = temp - 12;
     }
     let cuurenttime = hour + ":" + min + ":" + sec;
     clocktime.innerHTML = cuurenttime;
