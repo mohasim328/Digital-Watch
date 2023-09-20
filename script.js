@@ -3,20 +3,18 @@ setInterval(() => {
     const clockdate = document.getElementById('date');
     const period = document.getElementById('period');
     const date = new Date();
-
-
     let min = (date.getMinutes() < 10) ? "0" + date.getMinutes() : date.getMinutes();
     let sec = (date.getSeconds() < 10) ? "0" + date.getSeconds() : date.getSeconds();
     let ampm = (date.getHours() > 12) ? "pm" : "am";
     let hour  = date.getHours();
     if (date.getHours() < 10) {
-        hour = "0" + date.getHours();
+        hour = "0" +date.getHours() ;
+    }
+    else{
+        hour = date.getHours() -12 ; 
     }
     
-    else if(date.getHours()>12){
-        hour = "0" + date.getHours()-12;
-    }
-   
+  
     let cuurenttime = hour + ":" + min + ":" + sec;
     clocktime.innerHTML = cuurenttime;
     period.innerHTML = ampm;
