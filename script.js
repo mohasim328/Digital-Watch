@@ -6,22 +6,24 @@ setInterval(() => {
     let min = (date.getMinutes() < 10) ? "0" + date.getMinutes() : date.getMinutes();
     let sec = (date.getSeconds() < 10) ? "0" + date.getSeconds() : date.getSeconds();
     let ampm = (date.getHours() > 12) ? "pm" : "am";
-    let hour  = date.getHours();
-    if (date.getHours() <= 12) {
-
-     hour  = date.getHours() +12 ;
-        
+    let temp  = date.getHours();
+    
+    let hour;
+    if((temp == 0 )||(temp == 12)){
+        hour = 12; 
     }
-    else{
-        var realtime = date.getHours()
-        if(realtime>12 && realtime<22){
-            hour = "0"+(realtime-12)
-        }
-        else{
-            hour = realtime-12;
-        }
+    else if(temp>=1&&temp<=9){
+        hour = "0" + temp;
     }
-  
+    else if(temp>=10&&temp<=12){
+        hour = temp;
+    }
+    else if(temp>=13&&temp<=21){
+        hour =  "0" + temp -12;
+    }
+    else {
+        hour = temp;
+    }
     let cuurenttime = hour + ":" + min + ":" + sec;
     clocktime.innerHTML = cuurenttime;
     period.innerHTML = ampm;
